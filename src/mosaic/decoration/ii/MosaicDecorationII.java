@@ -19,7 +19,7 @@ public class MosaicDecorationII {
     public static void main(String[] args) {
         
         int width = 0, height = 0, a = 0, b = 0, m = 0, c = 0;
-        int fullW = 0, fullH = 0, cut = 0;
+        int fullW = 0, fullH = 0, wCut = 0, hCut = 0, cut = 0;
         int cost =0;
         
         Scanner in = new Scanner(System.in);
@@ -69,7 +69,7 @@ public class MosaicDecorationII {
             System.out.println("cuts: "+cut);
             
             cost = (cut*c) + m;
-            System.out.println("Cost: " + cost);
+            System.out.println(cost);
     }
     
 }
