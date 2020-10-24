@@ -19,6 +19,9 @@ public class MosaicDecorationII {
     public static void main(String[] args) {
         
         int width = 0, height = 0, a = 0, b = 0, m = 0, c = 0;
+        int fullW = 0, fullH = 0, cut = 0;
+        int cost =0;
+        
         Scanner in = new Scanner(System.in);
             int w = in.nextInt();
             if (w<= 1000000 && w>= 1){
@@ -45,12 +48,28 @@ public class MosaicDecorationII {
                 c = cc;
             }
             
-            System.out.println(w);
-            System.out.println(h);
-            System.out.println(a);
-            System.out.println(b);
-            System.out.println(m);
-            System.out.println(c);
+            while (fullW < width){
+                fullW += a;
+            }
+            System.out.println("fullW is: " + fullW);
+            while (fullH < height){
+                fullH += b;
+            }
+            System.out.println("fullH is: " + fullH);
+            
+            if (fullW > width && fullH > height) {
+                cut = width + height;
+            }
+            else if (fullW > width) {
+                cut = (fullW * height) - (width * height);
+            }
+            else if (fullH > height) {
+                cut = (fullH * width) - (height * width);
+            }
+            System.out.println("cuts: "+cut);
+            
+            cost = (cut*c) + m;
+            System.out.println("Cost: " + cost);
     }
     
 }
